@@ -7,7 +7,7 @@ const contact = (req, res) => {
 
 
         
-        connection.query('INSERT INTO dbcfd5endvqsc0.contact_credentials SET?',{
+        connection.query('INSERT INTO contact_credentials SET?',{
             name: name,
             lastname: lastname,
             email: email.trim(),
@@ -26,6 +26,25 @@ const contact = (req, res) => {
     });
 }
 
+const getcontact = (req,res) =>{
+    
+    pool().getConnection(function (err, connection) {
+        if (err) throw err;
+
+        connection.query('SELECT * FROM contact_credentials', (err, result) =>{
+            if(!err){
+                res.json("ok");
+            }
+            else{
+                res.json("error");
+                console.log("error");
+
+            }
+        })
+    });
+}
+
 module.exports = {
-    contact
+    contact,
+    getcontact
 }

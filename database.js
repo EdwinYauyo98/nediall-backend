@@ -5,8 +5,8 @@ module.exports = () => {
     return mysql.createPool({
         connectionLimit: 10,
         host: '35.209.204.163',
-        username: 'uqbhcavgmbpts',
-        password: "dd13b%s$tc`1",
+        user: 'uqbhcavgmbpts',
+        password: '4lo#4d1%7%#1',
         database: 'dbcfd5endvqsc0'
     });
 }
